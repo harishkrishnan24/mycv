@@ -6,7 +6,7 @@ import {
   Param,
   Patch,
   Get,
-  Query
+  Query,
 } from '@nestjs/common';
 import { AdminGuard } from 'src/guards/admin.guard';
 import { AuthGuard } from 'src/guards/auth.guard';
@@ -38,6 +38,6 @@ export class ReportsController {
 
   @Get()
   getEstimate(@Query() query: GetEstimateDto) {
-    
+    return this.reportsService.createEstimate(query);
   }
 }
